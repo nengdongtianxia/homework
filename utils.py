@@ -41,15 +41,15 @@ def add_member():
     file_path="team_data.txt"
 #以"a"模式打开文件，指定编码为utf-8，避免中文乱码
     with open("team_data.txt","a",encoding="utf-8")as f:
-#判断文件是否不存在，或者文件存在但大小为0
-        if not os.path.exists("team_data.txt")or os.path.getsize("team_data.txt")==0:
+#判断文件是否为0
+        if os.path.getsize("team_data.txt")==0:
 #若满足条件，先向文件写入表头信息
             f.write("姓名/角色/技能/标签/电话/加入日期\n")
 #将拼好的成员信息写入文件
-            f.write(team_data)
-    print(f"已成功录入")
+        f.write(team_data)
+        print(f"已成功录入")
 #调用函数
-add_member()
+#add_member()
 #定义函数
 def search_member():
 #提示用户进入查询功能
